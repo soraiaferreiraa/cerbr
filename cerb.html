@@ -33,10 +33,16 @@
 	<button id="nao">Não</button>
 
 	<script>
-		var nao = onmouseover.document.getElementById("nao");
-		nao.addEventListener("click", function() 
+		var nao = document.getElementById("nao");
+		nao.addEventListener("click", function() {
+			var randomX = Math.floor(Math.random() * window.innerWidth);
+			var randomY = Math.floor(Math.random() * window.innerHeight);
+			nao.style.position = "absolute";
+			nao.style.top = randomY + "px";
+			nao.style.left = randomX + "px";
 		});
-
+                naoButton.addEventListener("click", handleNao);
+		naoButton.addEventListener("mouseover", handleNao);
 		var sim = document.getElementById("sim");
 		sim.addEventListener("click", function() {
 			window.location.href = "https://www.youtube.com/watch?v=7jbIxTVedr4";
